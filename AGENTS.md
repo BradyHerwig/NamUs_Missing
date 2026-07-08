@@ -1,27 +1,26 @@
-# Project conventions (namus-ds)
+# Project conventions
 
-## Notebooks-first workflow
+## Layout
 
-For this project, use **Jupyter notebooks** (`.ipynb`) for all analysis and project-facing code:
+- **Notebooks** live in `notebooks/` — all analysis, EDA, and modeling work happens here.
+- **Data** lives in `data/raw/` (original downloads) and `data/processed/` (cleaned tables).
+- **Models** live in `models/` as saved files (`.joblib`, `.pkl`), not as notebooks.
+- **Figures** for reports go in `reports/figures/`.
 
-- Data acquisition, EDA, feature engineering, modeling, and reporting live in `notebooks/`
-- Do **not** create notebook-style `.py` scripts in `notebooks/` (no `# %%` cell scripts)
-- Prefer numbered notebooks: `00_data_acquisition.ipynb`, `01_eda.ipynb`, `02_feature_engineering.ipynb`, etc.
+## Notebooks
 
-## Documentation style
+- Use numbered notebooks: `01_data_collection.ipynb`, `02_eda.ipynb`, `03_modeling.ipynb`.
+- Do not put notebooks inside `data/` or `models/`.
+- The author writes all markdown explanations manually — do not add narrative markdown cells.
+- Keep notebook changes to code and minimal section headers only.
 
-- The author writes all markdown explanations manually — do **not** add narrative markdown cells or explanatory paragraphs
-- Keep notebook changes to code and minimal structural markdown (titles/section headers only if needed)
-- Leave space between sections so the author can insert their own write-ups later
+## Data
 
-## What stays as Python modules
+- Treat `data/raw/` as immutable. Never edit files in place.
+- Write cleaned output to `data/processed/`.
+- Be careful with personally identifying fields and images.
 
-Reusable library code belongs in `src/namus/` (loaders/scrapers, features, config, utils). Notebooks import from there; they are not a replacement for the package.
+## AI assistants
 
-CLI utilities (e.g. `scripts/scrape_namus.py`) are fine when a one-off command is more practical than a notebook cell.
-
-## NamUs-specific notes
-
-- Treat `data/raw` as the source of truth. Never edit files in place.
-- Be extremely careful with any image or personally identifying fields.
-- When building scrapers, prefer idempotent / resumable designs and respect public site limits.
+- Do not write analysis code unless explicitly asked.
+- Do not fill in `DATA_DICTIONARY.md` or `ETHICS.md` — the author maintains those.
