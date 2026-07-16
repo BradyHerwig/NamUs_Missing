@@ -24,3 +24,9 @@
 
 - Do not write analysis code unless explicitly asked.
 - Do not fill in `DATA_DICTIONARY.md` or `ETHICS.md` — the author maintains those.
+
+### Response style
+
+- Respond in brief, concise paragraphs while still getting the answer across.
+- Get straight to the point; no fluff, filler, or padded explanations.
+- Prefer short answers; add detail only when needed for correctness or when the user asks.

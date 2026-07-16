@@ -2,6 +2,8 @@
 
 Data science project for the National Missing and Unidentified Persons System (NamUs).
 
+Through this project and modeling, the question I sought to answer was: **How do demographic and geographic characteristics of NamUs missing-person listings differ between juveniles and adults, and which factors best distinguish the two groups when modeled with logistic regression versus a decision tree?** I sought to answer this because national averages can hide different listing profiles by age group, and comparing an interpretable regression model to a tree shows whether simple additive effects are enough or whether interactions matter—while staying honest that this describes patterns in a public listing database, not the true risk of going missing.
+
 ## Quick Start (PowerShell)
 
 ```powershell
@@ -54,3 +56,7 @@ You can use existing community scrapers or build your own with `requests` and `b
 ## Optional Extras
 
 Add packages to `requirements.txt` only when a notebook needs them (e.g. `plotly`, `xgboost`, `statsmodels`).
+
+## AI Assistance
+
+This project used Grok 4.5 as a lightweight assistant for setup and support—not as the author of the analysis. Help covered the base file structure, library recommendations, and other simple project tasks. All analysis and modeling code was written by me; Grok was used to error-check and troubleshoot when needed.
